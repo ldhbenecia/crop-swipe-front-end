@@ -1,3 +1,23 @@
+@font-face {
+    font-family: 'base';
+    src: url('../src/assets/font/NanumSquareNeo-bRg.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'light';
+  src: url(../src/assets/font/NanumSquareNeo-aLt.ttf);
+}
+
+@font-face {
+  font-family: 'bold';
+  src: url(../src/assets/font/NanumSquareNeo-cBd.ttf);
+}
+
+* {
+  font-family: 'base';
+}
+
+
 body {
   margin: 0;
 }

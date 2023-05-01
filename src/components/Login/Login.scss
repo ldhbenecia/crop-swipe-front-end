@@ -1,0 +1,51 @@
+form {
+  width: 100%;
+}
+
+.signInWrapper {
+  position: absolute;
+  padding: 20px 14px;
+  width: 308px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signInContainer {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.authInput {
+  max-width: 320px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  color: black;
+}
+
+input:focus {
+  outline: 1px solid gray;
+}
+
+.authSubmit {
+  max-width: 320px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  color: black;
+  
+  text-align: center;
+  color: black;
+  margin-top: 10;
+  cursor: pointer;
+}

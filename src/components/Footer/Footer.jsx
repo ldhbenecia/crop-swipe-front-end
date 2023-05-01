@@ -1,10 +1,11 @@
 import React from "react";
+import "./Footer.scss";
 
 const Footer = () => {
   return (
-    <>
-      <div>Footer</div>
-    </>
+    <footer>
+      © Copyright {new Date().getFullYear()} CropSwipe - All Rights Reserved
+    </footer>
   );
 };
 
