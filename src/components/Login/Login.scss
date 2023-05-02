@@ -3,49 +3,63 @@ form {
 }
 
 .signInWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.signInTop {
   position: absolute;
-  padding: 20px 14px;
-  width: 308px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.signInContainer {
-  width: 100%;
-  max-width: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.signInTop img {
+  height: 117px;
+  margin-bottom: 10px;
+}
 
+.signInContainer {
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+}
+
+.loginLogo {
+  height: 117px;
+  margin-bottom: 10px;
+}
+
+.signInTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 
 .authInput {
-  max-width: 320px;
-  width: 100%;
+  max-width: 100%;
+  width: 276px;
   padding: 20px;
   border-radius: 20px;
   margin-bottom: 25px;
   font-size: 15px;
   color: black;
+}
+
+.authSubmit {
+  max-width: 100%;
+  width: 100%; /* 로그인하기 버튼의 너비를 100%로 지정합니다. */
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  font-size: 15px;
+  color: black;
+  text-align: center;
+  cursor: pointer;
 }
 
 input:focus {
   outline: 1px solid gray;
-}
-
-.authSubmit {
-  max-width: 320px;
-  width: 100%;
-  padding: 20px;
-  border-radius: 20px;
-  margin-bottom: 25px;
-  font-size: 15px;
-  color: black;
-  
-  text-align: center;
-  color: black;
-  margin-top: 10;
-  cursor: pointer;
 }

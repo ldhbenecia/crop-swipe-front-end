@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Login.scss";
+import logo from "../../assets/images/logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const OnChange = (event) => {
+  const onChange = (event) => {
     const {
       target: { name, value },
     } = event;
@@ -19,31 +20,33 @@ const Login = () => {
 
   return (
     <div className="signInWrapper">
-      <p>Crop Swipe 로그인</p>
-      <form className="signInContainer">
-        <input
-          name="email"
-          type="text"
-          placeholder="이메일"
-          required
-          value={email}
-          onChange={OnChange}
-          className="authInput"
-        />
-        <input
-          name="password"
-          type="password"
-          placeholder="비밀번호"
-          required
-          value={password}
-          onChange={OnChange}
-          className="authInput"
-        />
-        <input
-          type="submit"
-          className="authInput authSubmit"
-        />
-      </form>
+      <div className="signInContainer">
+        <img src={logo} alt="Crop Swipe 로고" className="loginLogo" />
+        <p className="signInTitle">Crop Swipe 로그인</p>
+        <form className="signInForm">
+          <input
+            name="email"
+            type="text"
+            placeholder="이메일"
+            required
+            value={email}
+            onChange={onChange}
+            className="authInput"
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="비밀번호"
+            required
+            value={password}
+            onChange={onChange}
+            className="authInput"
+          />
+          <button type="submit" className="authInput authSubmit">
+            로그인 하기
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
