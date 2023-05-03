@@ -1,3 +1,18 @@
+.intro {
+  text-align: center;
+}
+
 .intro-title {
-  font-size: 50px;
+  font-family: 'bold';
+  font-size: 30px;
+  margin: 0 auto;
+  padding: 50px;
+  line-height: 120%;
+}
+
+.intro-contents {
+  font-size: 15px;
+  margin: 0 auto;
+  line-height: 150%;
+  margin-bottom: 100px;
 }

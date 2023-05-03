@@ -9,7 +9,7 @@ const Header = () => {
       <div className="header-in">
         <div className="left-tab">
           <img className="logo-image" src={logo}></img>
-          <h1>CropSwipe</h1>
+          <h3>CropSwipe</h3>
         </div>
         <nav className="menu">
           <Link to="/board">
