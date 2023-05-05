@@ -9,7 +9,9 @@ const Header = () => {
       <div className="header-in">
         <div className="left-tab">
           <img className="logo-image" src={logo}></img>
-          <h3>CropSwipe</h3>
+          <Link to="/">
+            <h3>CropSwipe</h3>
+          </Link>
         </div>
         <nav className="menu">
           <Link to="/board">
