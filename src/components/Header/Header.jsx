@@ -8,7 +8,7 @@ const Header = () => {
     <header className="header">
       <div className="header-in">
         <div className="left-tab">
-          <img className="logo-image" src={logo}></img>
+          <img className="logo-image" src={logo} alt="titleLogo"></img>
           <Link to="/">
             <h3>CropSwipe</h3>
           </Link>
@@ -19,6 +19,12 @@ const Header = () => {
           </Link>
           <Link to="/transaction">
             <span>거래하기</span>
+          </Link>
+          <Link to ="/signin">
+            <span>로그인</span>
+          </Link>
+          <Link to ="/signup">
+            <span>회원가입</span>
           </Link>
         </nav>
       </div>
