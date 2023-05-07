@@ -42,8 +42,8 @@ const SignUp = () => {
           alignItems: "center",
         }}
       >
-        <img style={{ height: 110 }} src={logo}></img>
-        <Typography component="h1" variant="h5">
+        <img style={{ height: 110 }} src={logo} alt="titleLogo"></img>
+        <Typography component="h1" variant="h3">
           CropSwipe
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
@@ -52,6 +52,8 @@ const SignUp = () => {
               <TextField
                 autoComplete="given-name"
                 name="firstName"
+                inputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
                 color="success"
                 required
                 fullWidth
@@ -67,6 +69,8 @@ const SignUp = () => {
                 id="lastName"
                 label="성"
                 name="lastName"
+                inputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
                 color="success"
                 autoComplete="family-name"
               />
@@ -78,6 +82,8 @@ const SignUp = () => {
                 id="email"
                 label="이메일"
                 name="email"
+                inputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
                 color="success"
                 autoComplete="email"
               />
@@ -87,6 +93,8 @@ const SignUp = () => {
                 required
                 fullWidth
                 name="password"
+                inputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
                 label="비밀번호"
                 color="success"
                 type="password"
@@ -101,6 +109,8 @@ const SignUp = () => {
                 id="address"
                 label="주소"
                 name="address"
+                inputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
                 color="success"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
@@ -113,6 +123,8 @@ const SignUp = () => {
                 id="addressDetail"
                 label="상세주소"
                 name="addressDetail"
+                inputProps={{ style: { fontSize: 15 } }}
+                InputLabelProps={{ style: { fontSize: 15 } }}
                 color="success"
                 value={addressDetail}
                 onChange={(e) => setAddressDetail(e.target.value)}
@@ -123,6 +135,7 @@ const SignUp = () => {
                 variant="contained"
                 color="success"
                 onClick={handleAddressClick}
+                sx={{ fontSize: 15 }}
               >
                 주소 찾기
               </Button>
@@ -133,7 +146,7 @@ const SignUp = () => {
             fullWidth
             variant="contained"
             color="success"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 3, mb: 2, fontSize: 15 }}
           >
             회원가입 하기
           </Button>
@@ -166,6 +179,7 @@ const SignUp = () => {
                 sx={{
                   marginTop: "1rem",
                   float: "right",
+                  fontSize: 15
                 }}
                 variant="outlined"
                 onClick={() => setIsOpenPost(false)}

@@ -13,9 +13,8 @@ const MuiLogin = () => {
           alignItems: "center",
         }}
       >
-        <img style={{height: 110}}
-        src={logo}></img>
-        <Typography component="h1" variant="h5">
+        <img style={{ height: 110 }} src={logo}></img>
+        <Typography component="h1" variant="h3">
           CropSwipe
         </Typography>
         <TextField
@@ -26,6 +25,8 @@ const MuiLogin = () => {
           fullWidth
           name="email"
           autoComplete="email"
+          inputProps={{ style: { fontSize: 15 } }}
+          InputLabelProps={{ style: { fontSize: 15 } }}
           autoFocus
         />
         <TextField
@@ -36,6 +37,8 @@ const MuiLogin = () => {
           required
           fullWidth
           name="password"
+          inputProps={{ style: { fontSize: 15 } }}
+          InputLabelProps={{ style: { fontSize: 15 } }}
           autoComplete="current-password"
         />
         <Button
@@ -43,7 +46,8 @@ const MuiLogin = () => {
           fullWidth
           variant="contained"
           color="success"
-          sx={{ mt: 3, mb: 2 }}
+          
+          sx={{ mt: 3, mb: 2, fontSize: 15 }}
         >
           로그인 하기
         </Button>
