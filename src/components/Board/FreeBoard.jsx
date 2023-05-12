@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./FreeBoard.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "./FreeBoard.scss";
 
 const FreeBoard = () => {
   const [posts, setPosts] = useState([]);
@@ -18,6 +18,9 @@ const FreeBoard = () => {
       <div className="board_title">
         <h1>CropSwipe 자유게시판</h1>
         <p>임시 자유게시판입니다.</p>
+        <div className="bt_wrap">
+          <Link to="/postform" className="write">글쓰기</Link>
+        </div>
       </div>
       <div className="board_list_wrap">
         <div className="board_list">

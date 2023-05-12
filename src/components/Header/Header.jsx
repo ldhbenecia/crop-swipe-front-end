@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
+
 import logo from "../../assets/images/logo.png"
 
 const Header = () => {
@@ -10,7 +11,7 @@ const Header = () => {
         <div className="left-tab">
           <img className="logo-image" src={logo} alt="titleLogo"></img>
           <Link to="/">
-            <h3>CropSwipe</h3>
+            <h4>CropSwipe</h4>
           </Link>
         </div>
         <nav className="menu">

@@ -1,10 +1,11 @@
 import React from "react";
-import MuiLogin from "../../components/Auth/SignIn/MuiLogin";
+
+import SignIn from "../../components/Auth/SignIn/SignIn";
 
 const SignInPage = () => {
   return (
     <>
-      <MuiLogin />
+      <SignIn />
     </>
   );
 };

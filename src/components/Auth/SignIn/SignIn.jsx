@@ -1,8 +1,9 @@
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
-import logo from "../../../assets/images/logo.png";
 import React from "react";
+import { Box, Button, Container, TextField, Typography } from "@mui/material";
 
-const MuiLogin = () => {
+import logo from "../../../assets/images/logo.png";
+
+const SignIn = () => {
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -13,7 +14,7 @@ const MuiLogin = () => {
           alignItems: "center",
         }}
       >
-        <img style={{ height: 110 }} src={logo}></img>
+        <img style={{ height: 110 }} src={logo} alt="logoImage"></img>
         <Typography component="h1" variant="h3">
           CropSwipe
         </Typography>
@@ -46,7 +47,6 @@ const MuiLogin = () => {
           fullWidth
           variant="contained"
           color="success"
-          
           sx={{ mt: 3, mb: 2, fontSize: 15 }}
         >
           로그인 하기
@@ -56,6 +56,4 @@ const MuiLogin = () => {
   );
 };
 
-export default MuiLogin;
-
-
+export default SignIn;
