@@ -1,7 +1,7 @@
 import React from "react";
 import "./Main.scss";
 
-import exCard from "../../assets/images/logo.png";
+import exCard from "../../assets/images/whiteTitle3.jpeg";
 import SimpleSlider from "./ImageSlider";
 
 
@@ -12,7 +12,7 @@ const Main = () => {
         <div className="FrontComponent">
           <SimpleSlider />
           <div className="popular">
-            <div className="popularTitle">주목할만한 프로젝트</div>
+            <div className="popularTitle">주목할만한 상품</div>
             <div className="projectList">
               <div className="projectWrapper">
                 <div className="card-wrapper">
