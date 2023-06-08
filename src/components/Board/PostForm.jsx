@@ -1,23 +1,35 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./PostForm.scss";
 
 const PostForm = () => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const postData = { title, body };
 
-    const postData = { title, body };
+  const saveBoard = async () => {
+    await axios
+      .post(`${process.env.REACT_APP_API_URL}/board`, postData)
+      .then((res) => {
+        alert("등록되었습니다.");
+        navigate("/board");
+      });
+  };
 
-    axios.post("/api/posts", postData).then((response) => {
-      console.log(response.data);
-    });
+  // 입력값이 비어있는지 확인하는 함수
+  const isFormEmpty = () => {
+    return title.trim() === "" || body.trim() === "";
+  };
+
+  const backToBoard = () => {
+    navigate("/board");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="post-form">
+    <form className="post-form">
       <div>
         <label htmlFor="title">제목</label>
         <input
@@ -35,7 +47,19 @@ const PostForm = () => {
           onChange={(e) => setBody(e.target.value)}
         />
       </div>
-      <button type="submit">글쓰기</button>
+      <div className="button-wrap">
+        <button className="cancel-button" onClick={backToBoard} type="button">
+          취소
+        </button>
+        <button
+          className="submit-button"
+          disabled={isFormEmpty()}
+          onClick={saveBoard}
+          type="submit"
+        >
+          글 작성 완료
+        </button>
+      </div>
     </form>
   );
 };

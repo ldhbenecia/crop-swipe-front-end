@@ -9,7 +9,7 @@ const PostView = () => {
 
   useEffect(() => {
     axios
-      .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
+      .get(`${process.env.REACT_APP_API_URL}/api/v1/crop/projects/${postId}`)
       .then((response) => {
         setData(response.data);
       });
@@ -29,7 +29,7 @@ const PostView = () => {
         </div>
         <div className="voc-view-row">
           <label>내용</label>
-          <div>{data.body}</div>
+          <div>{data.description}</div>
         </div>
       </div>
     </div>
