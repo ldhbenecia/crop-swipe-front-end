@@ -1,19 +1,5 @@
-h4 {
-  font-weight: bold;
-  color: black;
-}
-
-a, span {
-  text-decoration: none;
-  color: black;
-}
-
-.menu span {
-  font-size: 1.5rem;
-}
-
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 5;
@@ -41,13 +27,17 @@ a, span {
 }
 
 .logo-image {
-  height: 66px;
+  width: 150px;
+  padding-top: 10px;
 }
 
 .menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-size: 18px;
   gap: 20px;
+
+  span {
+    font-size: 1.5rem;
+  }
 }

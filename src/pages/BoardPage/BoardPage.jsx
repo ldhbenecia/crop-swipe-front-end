@@ -2,13 +2,13 @@ import React from "react";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import FreeBoard from "../../components/Board/FreeBoard";
+import QnABoard from "../../components/Board/QnABoard";
 
 const BoardPage = () => {
   return (
     <>
     <Header />
-    <FreeBoard />
+    <QnABoard />
     <Footer />
     </>
   )

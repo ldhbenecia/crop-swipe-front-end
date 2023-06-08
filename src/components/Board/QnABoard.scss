@@ -72,6 +72,10 @@
   .post_title {
     width: 60%;
   }
+
+  .post_writer {
+    width: 30%;
+  }
 }
 
 .post_list {
@@ -93,5 +97,10 @@
   .post_title {
     width: 60%;
     margin-left: 20px;
+  }
+
+  .post_writer {
+    width: 30%;
+    text-align: center;
   }
 }
