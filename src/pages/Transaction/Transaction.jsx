@@ -1,11 +1,14 @@
 import React from "react";
+import MainHeader from "../../components/Header/MainHeader";
+import Start from "../../components/Transaction/Start";
 
 const Transaction = () => {
   return (
-    <div>
-      거래 뷰
-    </div>
-  )
+    <>
+      <MainHeader />
+      <Start />
+    </>
+  );
 }
 
 export default Transaction

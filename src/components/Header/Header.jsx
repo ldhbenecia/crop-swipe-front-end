@@ -23,9 +23,6 @@ const Header = () => {
           <Link to="/signin">
             <span>로그인</span>
           </Link>
-          <Link to="/signup">
-            <span>회원가입</span>
-          </Link>
         </nav>
       </div>
     </header>
