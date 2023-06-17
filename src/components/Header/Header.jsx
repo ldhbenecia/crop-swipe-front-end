@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import "./Header.scss";
 
-import textLogo from "../../assets/images/textLogo.png"
+import textLogo from "../../assets/images/textLogo.png";
 
 const Header = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
+  const isLoggedIn = !!cookies.token;
+
+  const handleLogout = () => {
+    removeCookie("token");
+  };
+
   return (
     <header className="header">
       <div className="header-in">
@@ -20,9 +28,15 @@ const Header = () => {
           <Link to="/transaction">
             <span>거래하기</span>
           </Link>
-          <Link to="/signin">
-            <span>로그인</span>
-          </Link>
+          {isLoggedIn ? (
+            <span onClick={handleLogout}>
+              <span>로그아웃</span>
+            </span>
+          ) : (
+            <Link to="/signin">
+              <span>로그인</span>
+            </Link>
+          )}
         </nav>
       </div>
     </header>
