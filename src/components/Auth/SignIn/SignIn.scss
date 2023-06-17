@@ -1,0 +1,50 @@
+.SignIn-Wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.intro {
+  margin-top: 100px;
+  font-size: large;
+  text-align: left;
+}
+
+.bold-intro {
+  font-size: x-large;
+  font-weight: 800;
+}
+
+.kakao-button {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-direction: normal;
+  word-break: break-all;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+  box-sizing: inherit;
+  font: inherit;
+  margin: 0;
+  margin-top: 30px;
+  overflow: visible;
+  text-transform: none;
+  -webkit-appearance: button;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 18px;
+  background-color: rgb(254, 229, 0);
+  border: none;
+  outline: none;
+  border-radius: 1px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(25, 25, 25);
+  height: 62px;
+  width: 400px;
+}
