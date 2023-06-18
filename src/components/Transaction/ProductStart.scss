@@ -1,11 +1,12 @@
 .start-wrapper {
-  padding-top: 110px;
   display: flex;
+  height: 100vh;
 }
 
 @media (min-width: 1080px) {
   .left-contents {
     flex-shrink: 0;
+    background-repeat: no-repeat;
 
     img {
       display: block;
@@ -21,11 +22,11 @@
   }
 }
 
-
 .right-contents {
-    flex-grow: 1;
-    overflow-y: auto; 
-  }
+  padding-top: 110px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
 
 .right-wrap {
   width: 450px;
@@ -46,6 +47,8 @@
 
   p {
     margin-bottom: 40px;
+    font-size: medium;
+    color: gray;
   }
 }
 
@@ -78,7 +81,7 @@
   }
 
   button.active {
-    background: rgb(34,139,34);
+    background: rgb(34, 139, 34);
     color: rgb(255, 255, 255);
     border: 1px solid rgb(255, 255, 255);
   }
@@ -98,6 +101,7 @@ textarea {
   overflow: auto;
   color: inherit;
   font: inherit;
+  font-size: small;
   margin: 0;
 }
 
@@ -113,9 +117,7 @@ textarea {
   font-weight: bold;
   cursor: pointer;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
   justify-content: center;
   height: 40px;
   white-space: nowrap;
@@ -125,7 +127,7 @@ textarea {
   outline: none;
   box-sizing: border-box;
   padding: 0px 16px;
-  background-color: rgb(34,139,34);
+  background-color: rgb(34, 139, 34);
   color: rgb(255, 255, 255);
   float: right;
 
