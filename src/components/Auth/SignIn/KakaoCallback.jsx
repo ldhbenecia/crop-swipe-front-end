@@ -18,9 +18,10 @@ const KakaoCallback = () => {
           console.log(response.data); // 서버 응답을 확인하기 위해 콘솔에 출력
 
           // 받아온 토큰을 쿠키에 저장
-          const token = response.data.token;
-          setCookie("token", token, { path: "/" });
-
+          const accessToken = response.data.access;
+          const refreshToken = response.data.refresh;
+          setCookie("access-token", accessToken, { path: "/" });
+          setCookie("refresh-token", refreshToken, { path: "/" });
           // 로그인이 되면 메인 페이지로 이동
           navigate("/");
         } catch (error) {

@@ -9,8 +9,9 @@ const FreeBoard = () => {
   // 게시글 조회
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/v1/crop/projects`)
+      .get(`${process.env.REACT_APP_API_URL}/api/v1/post/posts`)
       .then((response) => {
+        console.log(response.data);
         setPosts(response.data);
       });
   }, []);
@@ -40,7 +41,7 @@ const FreeBoard = () => {
                 <Link to={`/post/${post.id}`} className="post_title">
                   {post.title}
                 </Link>
-                <span className="post_writer">{post.author}</span>
+                <span className="post_writer">{post.author.nickname}</span>
               </li>
             ))}
           </div>

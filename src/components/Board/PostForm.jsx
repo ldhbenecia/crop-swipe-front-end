@@ -2,26 +2,29 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./PostForm.scss";
-
+axios.defaults.withCredentials = true;
 const PostForm = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+  const [content, setContent] = useState("");
 
-  const postData = { title, body };
+  const postData = { title, content };
 
   const saveBoard = async () => {
     await axios
-      .post(`${process.env.REACT_APP_API_URL}/board`, postData)
-      .then((res) => {
+      .post(`${process.env.REACT_APP_API_URL}/api/v1/post/posts`, postData)
+      .then((response) => {
         alert("등록되었습니다.");
         navigate("/board");
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 
   // 입력값이 비어있는지 확인하는 함수
   const isFormEmpty = () => {
-    return title.trim() === "" || body.trim() === "";
+    return title.trim() === "" || content.trim() === "";
   };
 
   const backToBoard = () => {
@@ -29,7 +32,7 @@ const PostForm = () => {
   };
 
   return (
-    <form className="post-form">
+    <form className="post-form" method="POST">
       <div>
         <label htmlFor="title">제목</label>
         <input
@@ -40,11 +43,11 @@ const PostForm = () => {
         />
       </div>
       <div>
-        <label htmlFor="body">내용</label>
+        <label htmlFor="content">내용</label>
         <textarea
-          id="body"
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
+          id="content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
         />
       </div>
       <div className="button-wrap">
@@ -55,7 +58,7 @@ const PostForm = () => {
           className="submit-button"
           disabled={isFormEmpty()}
           onClick={saveBoard}
-          type="submit"
+          type="button"
         >
           글 작성 완료
         </button>
