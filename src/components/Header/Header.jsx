@@ -6,11 +6,16 @@ import "./Header.scss";
 import textLogo from "../../assets/images/textLogo.png";
 
 const Header = () => {
-  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
-  const isLoggedIn = !!cookies.token;
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "access-token",
+    "refresh-token",
+  ]);
+  const isLoggedIn = !!cookies["access-token"] && !!cookies["refresh-token"];
 
   const handleLogout = () => {
-    removeCookie("token");
+    removeCookie("access-token");
+    removeCookie("refresh-token");
+    window.location.reload();
   };
 
   return (
@@ -22,11 +27,11 @@ const Header = () => {
           </Link>
         </div>
         <nav className="menu">
-          <Link to="/board">
-            <span>자율 게시판</span>
-          </Link>
-          <Link to="/transaction">
+          <Link to="/productstart">
             <span>거래하기</span>
+          </Link>
+          <Link to="/board">
+            <span>Q&A 게시판</span>
           </Link>
           {isLoggedIn ? (
             <span onClick={handleLogout}>
