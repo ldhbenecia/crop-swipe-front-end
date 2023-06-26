@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./QnABoard.scss";
 
-const FreeBoard = () => {
+const QnABoard = () => {
   const [posts, setPosts] = useState([]);
 
   // 게시글 조회
@@ -11,7 +11,6 @@ const FreeBoard = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/v1/post/posts`)
       .then((response) => {
-        console.log(response.data);
         setPosts(response.data);
       });
   }, []);
@@ -51,4 +50,4 @@ const FreeBoard = () => {
   );
 };
 
-export default FreeBoard;
+export default QnABoard;
