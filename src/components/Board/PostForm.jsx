@@ -55,7 +55,7 @@ const PostForm = () => {
           취소
         </button>
         <button
-          className="submit-button"
+          className="submit-post-button"
           disabled={isFormEmpty()}
           onClick={saveBoard}
           type="button"
