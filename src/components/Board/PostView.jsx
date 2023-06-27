@@ -16,7 +16,6 @@ const PostView = () => {
       });
   }, [postId]); // postId가 변경될 때마다 (각 해당하는 게시글을 들어갈 때마다)
 
-  console.log(postData);
   return (
     <div>
       <h2 align="center">게시글 상세정보</h2>
@@ -33,6 +32,14 @@ const PostView = () => {
           <div className="voc-view-row">
             <label>내용</label>
             <div>{postData.post.content}</div>
+          </div>
+          <div className="voc-view-row">
+            <label>생성일</label>
+            <div>{postData.post.created_at}</div>
+          </div>
+          <div className="voc-view-row">
+            <label>수정일</label>
+            <div>{postData.post.updated_at}</div>
           </div>
         </div>
       )}

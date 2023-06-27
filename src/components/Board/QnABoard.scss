@@ -20,7 +20,7 @@
   text-align: left;
   font-size: 0;
 
-  a {
+  .qna-write-button {
     display: inline-block;
     text-align: center;
     min-width: 80px;
@@ -28,15 +28,9 @@
     margin-left: 10px;
     border-radius: 2px;
     font-size:1.4rem;
-  }
-
-  a:first-child {
-    margin-left: 0;;
-  }
-
-  a.write {
     background-color: #000;
     color: #fff;
+    cursor: pointer;
   }
 }
 
