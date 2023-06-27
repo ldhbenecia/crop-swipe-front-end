@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import "./Header.scss";
 
 import textLogo from "../../assets/images/textLogo.png";
+import { useRecoilState } from "recoil";
+import { isLoggedInState } from "../../recoil/authState";
 
 const Header = () => {
-  const [cookies, setCookie, removeCookie] = useCookies([
+  const [cookies, , removeCookie] = useCookies([
     "access-token",
     "refresh-token",
   ]);
-  const isLoggedIn = !!cookies["access-token"] && !!cookies["refresh-token"];
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(isLoggedInState);
+
+  useEffect(() => {
+    const accessToken = cookies["access-token"];
+    const refreshToken = cookies["refresh-token"];
+    setIsLoggedIn(accessToken && refreshToken);
+  }, [cookies, setIsLoggedIn]);
+
 
   const handleLogout = () => {
-    removeCookie("access-token");
-    removeCookie("refresh-token");
-    window.location.reload();
+    localStorage.removeItem("isCodeProcessed"); // KOE320 에러 방지 토큰
+    removeCookie("access-token", { path: "/" });
+    removeCookie("refresh-token", { path: "/" });
+    setIsLoggedIn(false);
+    window.location.replace("/");
   };
 
   return (
