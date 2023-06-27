@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import { isLoggedInState } from "../../recoil/authState";
 import "./QnABoard.scss";
 
 const QnABoard = () => {
+  const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
+  const isLoggedIn = useRecoilValue(isLoggedInState);
 
   // 게시글 조회
   useEffect(() => {
@@ -15,15 +19,25 @@ const QnABoard = () => {
       });
   }, []);
 
+  const handleWriteButton = () => {
+    if (!isLoggedIn) {
+      alert("글쓰기 권한이 없습니다.");
+      navigate("/signin"); 
+    } else {
+      navigate("/postform");
+    }
+  };
+
+
   return (
     <div className="board_wrapper">
       <div className="board_title">
         <h1>CropSwipe Q&A게시판</h1>
         <p>Q&A게시판입니다.</p>
         <div className="bt_wrap">
-          <Link to="/postform" className="write">
+          <button className="qna-write-button" onClick={handleWriteButton}>
             글쓰기
-          </Link>
+          </button>
         </div>
       </div>
       <div className="board_list_wrap">
