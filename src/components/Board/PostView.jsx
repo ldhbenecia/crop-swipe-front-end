@@ -9,11 +9,11 @@ import "./PostView.scss";
 
 const PostView = () => {
   const navigate = useNavigate();
-  const [postData, setPostData] = useState({});
-  const [comment, setComment] = useState("");
-  const [comments, setComments] = useState([]);
-  const [editCommentId, setEditCommentId] = useState(null);
-  const [updatedCommentContent, setUpdatedCommentContent] = useState("");
+  const [postData, setPostData] = useState({}); // 게시글 상세 정보
+  const [comment, setComment] = useState(""); // 댓글
+  const [comments, setComments] = useState([]); // 댓글 리스트
+  const [editCommentId, setEditCommentId] = useState(null); // 수정 댓글 Id 판단
+  const [updatedCommentContent, setUpdatedCommentContent] = useState(""); // 수정 내용 관리
   const { postId } = useParams();
   const isLoggedIn = useRecoilValue(isLoggedInState);
 
@@ -53,10 +53,12 @@ const PostView = () => {
     }
   };
 
+  // 댓글Id를 통해 수정할 댓글 선정
   const isEditableComment = (commentId) => {
     return editCommentId === commentId;
   };
 
+  // 수정할 댓글 Id, 내용 설정
   const handleCommentEdit = (commentId, content) => {
     setEditCommentId(commentId);
     setUpdatedCommentContent(content);
@@ -155,16 +157,54 @@ const PostView = () => {
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button onClick={handleCommentRegister}>등록</button>
+        <button
+          className="comment-register-button"
+          onClick={handleCommentRegister}
+        >
+          등록
+        </button>
       </form>
       <div className="comment-view">
         {comments.map((comment) => (
           <div className="comment" key={comment.id}>
             <div className="comment-wrapper">
-              <p className="comment-user">{comment.author.nickname}</p>
-              <p className="comment-created">{comment.created_at}</p>
+              <div className="comment-user">
+                <p>{comment.author.nickname}</p>
+                <p className="comment-created">{comment.created_at}</p>
+              </div>
+              <div className="comment-edit-delete-button">
+                {isEditableComment(comment.id) ? (
+                  <button
+                    className="comment-update-button"
+                    onClick={() =>
+                      handleCommentUpdate(comment.id, updatedCommentContent)
+                    }
+                  >
+                    수정 완료
+                  </button>
+                ) : (
+                  isLoggedIn && (
+                    <button
+                      className="comment-edit-button"
+                      onClick={() =>
+                        handleCommentEdit(comment.id, comment.content)
+                      }
+                    >
+                      수정
+                    </button>
+                  )
+                )}
+                {isLoggedIn && (
+                  <button
+                    className="comment-delete-button"
+                    onClick={() => handleCommentDelete(comment.id)}
+                  >
+                    삭제
+                  </button>
+                )}
+              </div>
             </div>
-            <div>
+            <div className="comment-detail">
               {isEditableComment(comment.id) ? (
                 <input
                   type="text"
@@ -172,30 +212,7 @@ const PostView = () => {
                   onChange={(e) => setUpdatedCommentContent(e.target.value)}
                 />
               ) : (
-                <p className="comment-detail">{comment.content}</p>
-              )}
-            </div>
-            <div>
-              {isLoggedIn && isEditableComment(comment.id) && (
-                <button
-                  onClick={() =>
-                    handleCommentUpdate(comment.id, updatedCommentContent)
-                  }
-                >
-                  수정 완료
-                </button>
-              )}
-              {isLoggedIn && !isEditableComment(comment.id) && (
-                <button
-                  onClick={() => handleCommentEdit(comment.id, comment.content)}
-                >
-                  수정
-                </button>
-              )}
-              {isLoggedIn && (
-                <button onClick={() => handleCommentDelete(comment.id)}>
-                  삭제
-                </button>
+                <p>{comment.content}</p>
               )}
             </div>
           </div>
