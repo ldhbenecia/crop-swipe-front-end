@@ -19,7 +19,7 @@
   margin: 0 auto;
   padding: 20px;
   border-radius: 20px;
-  border: 1px solid #CFC7C7;
+  border: 1px solid #cfc7c7;
   margin-bottom: 30px;
   background-color: white;
   box-sizing: border-box;
@@ -35,8 +35,8 @@
 .qna-post-subtitle {
   display: flex;
   font-size: 12px;
-  border-bottom: 1px solid #CFC7C7;
-  color: #6E6C6C;
+  border-bottom: 1px solid #cfc7c7;
+  color: #6e6c6c;
   margin-top: 10px;
   padding-bottom: 15px;
 }
@@ -47,9 +47,10 @@
 
 .qna-post-view {
   font-size: 20px;
-  color: #6E6C6C;
+  color: #6e6c6c;
   line-height: 1.5;
   margin-top: 20px;
+  min-height: 200px;
 }
 
 .qna-back {
@@ -66,16 +67,16 @@
 .qna-post-list {
   width: 80px;
   border-radius: 10px;
-  border: 1px solid #6E6C6C;
-  color: #4E4A4A;
-  background-color: #FFFFFF;
+  border: 1px solid #6e6c6c;
+  color: #4e4a4a;
+  background-color: #ffffff;
 }
 
 .qna-post-write {
   width: 80px;
   border-radius: 10px;
   border: none;
-  background-color: #4E4A4A;
+  background-color: green;
   color: white;
   margin-left: 10px;
 }
@@ -94,15 +95,19 @@
   height: 40px;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #CFC7C7;
+  border: 1px solid #cfc7c7;
 }
 
-.comment-wrapper button {
+.comment-wrapper input:focus {
+  outline: none;
+}
+
+.comment-register-button {
   width: 80px;
   height: 62px;
   padding: 10px 20px;
-  background-color: #4E4A4A;
-  color: #FFFFFF;
+  background-color: green;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   font-weight: 500;
@@ -125,20 +130,54 @@
   display: flex;
   align-items: center;
   margin-bottom: 8px;
+  flex-grow: 1;
 }
 
 .comment-user {
+  display: flex;
+  align-items: center;
   margin: 0;
   margin-right: 10px;
   font-weight: bold;
   font-size: 14px;
 }
 
+.comment-created {
+  margin-left: 10px;
+  font-size: 8px;
+  color: #6e6c6c;
+}
+
 .comment-detail {
   margin: 0;
   font-size: 14px;
+  border: none;
+}
+
+// .comment-detail input {
+//   border: none;
+// }
+
+.comment-detail input:focus {
+  outline: none;
 }
 
 .comment {
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 20px;
+}
+
+.comment-edit-button,
+.comment-delete-button,
+.comment-update-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.comment-edit-delete-button {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
 }
