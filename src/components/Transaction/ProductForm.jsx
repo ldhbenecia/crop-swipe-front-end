@@ -1,113 +1,78 @@
 import React, { useState } from "react";
 import "./ProductForm.scss";
+import leftContents from "../../assets/images/envir/start-left2.jpg";
 
 const ProductForm = () => {
-  const [targetAmount, setTargetAmount] = useState(""); // 목표 금액
+  const [price, setPrice] = useState(""); // 가격
+  const [price2, setPrice2] = useState(""); // 가격
+  const [price3, setPrice3] = useState(""); // 가격
   const [title, setTitle] = useState(""); // 제목
-  const [image, setImage] = useState(""); // 이미지
   const [description, setDescription] = useState(""); // 설명
-  // const [privatePrice, setPrivatePrice] = useState("");
-  // const [publicPrice, setPublicPrice] = useState("");
-  const [endDate, setEndDate] = useState(""); // 마지막 날짜
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
   return (
-    <div className="form-wrapper">
-      <div className="top-contents">
-        <div className="top-title">프로젝트 계획</div>
+    <div className="start-wrapper">
+      <div className="left-contents">
+        <img src={leftContents} alt="Left Content" />
       </div>
-      
-      <form onSubmit={handleSubmit}>
-        <div className="product-targetAmount">
-          <p className="target">목표 금액</p>
-          <p>상품의 최소 목표 금액을 설정해주세요.</p>
-          <div className="amount-input">
-            <span className="amount-inner">
-              <input
-                className="amount"
-                type="text"
-                placeholder="목표 금액을 입력해주세요"
-                onChange={(e) => setTargetAmount(e.target.value)}
-              ></input>
-              원
-            </span>
-          </div>
-        </div>
-        <div className="product-title">
-          <label htmlFor="title">제목</label>
-          <div className="amount-input">
+      <div className="right-contents">
+        <div className="right-wrap">
+          <div className="contents">
+            <h2>
+              프로젝트에 대한 가격 정보를 등록합니다.
+              <br />
+              가격은 얼마로 생각하고 계시나요?
+            </h2>
+            <p>가격을 입력해주세요.</p>
             <input
+              className="amount"
               type="text"
-              id="title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="product-image">
-          <label htmlFor="image">프로젝트 이미지</label>
-          <input
-            type="file"
-            id="image"
-            onChange={(e) => setImage(e.target.value)}
-          />
-        </div>
-        <div className="product-description">
-          <label htmlFor="description">설명</label>
-          <div className="amount-input">
-            <textarea
-              id="description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            ></textarea>
-          </div>
-        </div>
+              placeholder="가격을 입력해주세요"
+              onChange={(e) => setPrice(e.target.value)}
+            ></input>
+            <input
+              className="amount"
+              type="text"
+              placeholder="가격을 입력해주세요"
+              onChange={(e) => setPrice2(e.target.value)}
+            ></input>
+            <input
+              className="amount"
+              type="text"
+              placeholder="가격을 입력해주세요"
+              onChange={(e) => setPrice3(e.target.value)}
+            ></input>
 
-        {/* <div className="product-privatePrice">
-          <label htmlFor="privatePrice">개인구매 가격</label>
-          <div className="amount-input">
-            <span className="amount-inner">
-              <input
-                className="amount"
-                type="text"
-                id="privatePrice"
-                value={privatePrice}
-                onChange={(e) => setPrivatePrice(e.target.value)}
-              ></input>
-              원
-            </span>
+            <div className="contents">
+              <h2>프로젝트를 소개해주세요.</h2>
+              <p>편하게 적어주세요.</p>
+              <div className="summary-wrap">
+                <input
+                  type="text"
+                  placeholder="프로젝트 제목을 입력해주세요."
+                  className="titleInput"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                ></input>
+                <textarea
+                  className="textareas"
+                  placeholder="프로젝트 설명을 입력해주세요."
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                ></textarea>
+                <div className="next">
+                  <button className="next-button" onClick={handleSubmit}>
+                    제출
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="product-publicPrice">
-          <label htmlFor="publicPrice">공동구매 가격</label>
-          <div className="amount-input">
-            <span className="amount-inner">
-              <input
-                className="amount"
-                type="text"
-                id="publicPrice"
-                value={publicPrice}
-                onChange={(e) => setPublicPrice(e.target.value)}
-              />
-              원
-            </span>
-          </div>
-        </div> */}
-
-        <div className="product-endDate">
-          <label htmlFor="endDate">End date</label>
-          <input
-            type="datetime-local"
-            id="endDate"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-          />
-        </div>
-        <button className="submit-button" type="submit">제출</button>
-      </form>
+      </div>
     </div>
   );
 };
