@@ -9,7 +9,8 @@ import PostForm from "./components/Board/PostForm";
 import KakaoCallback from "./components/Auth/SignIn/KakaoCallback";
 import DetailLog from "./components/Auth/SignIn/DetailLog";
 import TransactionStart from "./pages/Transaction/TransactionStart";
-import TransactionPostFrom from "./pages/Transaction/TransactionPostFrom";
+import TransactionForm from "./pages/Transaction/TransactionForm";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 
 function App() {
   return (
@@ -21,10 +22,11 @@ function App() {
           <Route path="/post/:postId" element={<PostView />} />
           <Route path="/postform" element={<PostForm />} />
           <Route path="/productstart" element={<TransactionStart />} />
-          <Route path="/productpostform" element={<TransactionPostFrom />} />
+          <Route path="/productform" element={<TransactionForm />} />
           <Route path="/signin" element={<SignInPage />} />
           <Route path="/auth" element={<KakaoCallback />} />
           <Route path="/detaillog" element={<DetailLog />} />
+          <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
       </Router>
     </>
