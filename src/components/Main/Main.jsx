@@ -15,6 +15,7 @@ const Main = () => {
             <div className="popularTitle">주목할만한 상품</div>
             <div className="projectList">
               <div className="projectWrapper">
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -33,6 +34,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -51,6 +53,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -69,6 +72,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -87,6 +91,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -105,6 +110,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -123,6 +129,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -141,6 +148,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+
                 <div className="card-wrapper">
                   <div className="card">
                     <div className="image-wrapper">
@@ -159,6 +167,7 @@ const Main = () => {
                     </div>
                   </div>
                 </div>
+                
               </div>
             </div>
           </div>

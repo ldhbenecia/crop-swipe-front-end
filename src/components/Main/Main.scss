@@ -71,7 +71,6 @@ img.ab {
 
 .card {
   width: 100%;
-  
 }
 
 .info-wrapper {
@@ -81,7 +80,8 @@ img.ab {
 .card .image-wrapper img {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.04);
-  object-fit: cover; /* 이미지를 비율을 유지하면서 컨테이너에 맞춥니다. */
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .project-sub-info {

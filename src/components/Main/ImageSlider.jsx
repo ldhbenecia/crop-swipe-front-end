@@ -9,8 +9,9 @@ import exImage3 from "../../assets/images/eximage3.jpg";
 
 const Image = styled.img`
   width: 100%;
-  height: 50px;
-  background: red;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: top;
 `;
 
 export default class SimpleSlider extends Component {
